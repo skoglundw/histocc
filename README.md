@@ -70,7 +70,7 @@ Classifies occupations by:
 If you use this package in your research, please cite:
 
 ```
-Skoglund, W. (2024). histocc: Classification of Historical Swedish Occupations. 
+Skoglund, W. (2025). histocc: Classification of Historical Swedish Occupations. 
 R package version 0.1.0. https://github.com/skoglundw/histocc
 ```
 
