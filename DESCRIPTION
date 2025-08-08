@@ -1,0 +1,25 @@
+Package: histocc
+Title: Classification of Historical Swedish Occupations
+Version: 0.1.0
+Authors@R: 
+    person("William", "Skoglund", , "william.skoglund@ekhist.uu.se", role = c("aut", "cre"))
+Description: Provides tools for standardizing and classifying historical Swedish 
+    occupational titles. Includes functions for cleaning occupation names through 
+    fuzzy matching, coding occupations using HISCO (Historical International Standard 
+    Classification of Occupations), HISCLASS social class schemes, and Swedish 
+    historical sector classifications. Designed for researchers working with 
+    Swedish historical census and parish records from the 18th to early 20th centuries.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports: 
+    dplyr,
+    magrittr,
+    stringdist,
+    stringr
+Depends: 
+    R (>= 3.5)
+LazyData: true
+URL: https://github.com/williamskoglund/histocc
+BugReports: https://github.com/williamskoglund/histocc/issues
