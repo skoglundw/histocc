@@ -2,3 +2,4 @@
 
 export(occ_sector)
 export(standardize_occupation)
+export(occ_hisco)
