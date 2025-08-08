@@ -56,10 +56,10 @@ Codes occupations using HISCO and optionally adds:
 - HISCO descriptions
 - Occupational status codes  
 - HISCLASS-12 social class codes
-- Income scores
+- Income scores (from 1900, based on Bengtsson et al. (2021))
 
 ### `occ_sector()`
-Classifies occupations by:
+Classifies occupations (following Bengtsson et al. (2021)) by:
 - Economic sector (primary/secondary/tertiary)
 - Subsector
 - Worker type
