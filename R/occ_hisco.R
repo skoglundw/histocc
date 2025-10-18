@@ -36,7 +36,7 @@
 #'   \item Status 51/52 with missing HISCLASS become higher managers (1)
 #' }
 #'
-#' @return The data frame with additional HISCO-related columns.
+#' @return The data frame with additional HISCO-related columns (always includes hisco).
 #' @export
 #'
 #' @examples
@@ -66,6 +66,9 @@ occ_hisco <- function(data, occ_stand,
 
   # Check for existing columns that would be created in this call
   existing_cols <- c()
+  if ("hisco" %in% names(data)) {
+    existing_cols <- c(existing_cols, "hisco")
+  }
   if (description && "hisco_description" %in% names(data)) {
     existing_cols <- c(existing_cols, "hisco_description")
   }
@@ -101,12 +104,12 @@ occ_hisco <- function(data, occ_stand,
     occ_stand_col <- occ_stand
   }
 
-  # Define columns to include in join
-  join_cols <- "occ_stand"
+  # Define columns to include in join - ALWAYS include hisco
+  join_cols <- c("occ_stand", "hisco")
   if (description) join_cols <- c(join_cols, "hisco_description")
   if (status) join_cols <- c(join_cols, "status")
   if (hisclass) {
-    join_cols <- c(join_cols, "hisco", "hisclass_12") # Need both HISCO and basic HISCLASS
+    join_cols <- c(join_cols, "hisclass_12") # HISCO already included above
   }
   if (inc_score) {
     score_col <- paste0("inc_score_", inc_score_type)
@@ -190,11 +193,6 @@ occ_hisco <- function(data, occ_stand,
           )
         )
       )
-    }
-
-    # Remove the HISCO column if it wasn't originally requested
-    if (!"hisco_description" %in% names(result)) { # Only keep HISCO if description was requested
-      result$hisco <- NULL
     }
   }
 
