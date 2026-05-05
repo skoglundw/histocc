@@ -1,0 +1,458 @@
+"occ","occ_stand","n","st_sector","st_subsector","st_class"
+"***","***",92,4,0,0
+"***arbetare","arbetare",5,4,0,8
+"***lärare","lärare",1,3,5,7
+"***ordförande","ordförande",1,4,0,7
+"*ä***","ägare",1,4,0,1
+"?","n/a",4,4,0,0
+"? inneh.","innehavare",1,4,0,1
+"? rensare","rensare",1,4,0,8
+"_","n/a",10,4,0,0
+"__","n/a",1,4,0,0
+"_arbetare","arbetare",2,4,0,8
+"_elev","elev",1,4,0,12
+"_förman","förman",1,2,10,8
+"_änka","änka",1,4,0,13
+"affãrsbitr","affärsbiträde",3,3,1,8
+"affãrslritr","affärsbiträde",1,3,1,8
+"affãsbitr","affärsbiträde",1,3,1,8
+"affärsförestėndare","affärsföreståndare",1,3,1,6
+"affȧramnebavarinna","affärsinnehavarinna",1,3,1,6
+"affȧrl brit","affärsbiträde",1,3,1,8
+"ajõman","sjöman",1,3,2,8
+"amȧbrnk. ãg","ägare",1,4,0,1
+"anguet h. ãg","hemägare",1,1,0,10
+"arbet***","arbetare",1,4,0,8
+"arbetare?","arbetare",1,4,0,8
+"aõrvst","överste",1,3,6,7
+"bag>lärl","bagerilärling",0,2,6,8
+"bank…","bankman",1,3,3,7
+"bhauffã","chaufför",1,3,7,8
+"bhauffõr","chaufför",1,3,7,8
+"bilmontõr","bilmontör",1,2,2,8
+"bitrãde","biträde",2,4,0,8
+"blomsterarbetare?","blomsterarbetare",2,1,1,8
+"bohfõrea","bokförerska",1,4,0,7
+"bokhâll","bokhållare",0,4,0,7
+"bokhȧll","bokhållare",0,4,0,7
+"brädgȧrdsarbetare","brädgårdsarbetare",1,2,4,8
+"brödräkn;a","brödräknare",0,2,6,8
+"bussför;e","bussförare",1,3,2,8
+"butik***","butiksarbetare",2,3,1,8
+"byggn>grovarb","byggnadsgrovarbetare",0,2,9,8
+"byggn…","byggnadsarbetare",1,2,9,8
+"bygg…","byggarbetare",1,2,9,8
+"byrȧdirektör","byrådirektör",1,4,0,1
+"byrȧingeniör","byråingenjör",1,3,6,7
+"byrȧsekr","byråsekreterare",0,3,6,7
+"byrȧsekreterare","byråsekreterare",0,3,6,7
+"bårfõr","båtförare",1,3,2,8
+"bărare","bärare",0,3,2,8
+"b…arb.","bruksarbetare",1,2,2,8
+"caféidkare?","kafeidkare",1,3,1,6
+"cafėbitr","kafébiträde",0,3,4,8
+"chauffõr","chaufför",3,3,7,8
+"chauttãr","chaufför",2,3,7,8
+"chef***","chef",1,4,0,1
+"drãng","dräng",1,1,1,8
+"drõug","dräng",6,1,1,8
+"e.lauibrevbãreu","lantbrevbärare",1,3,2,8
+"eyrȧingeniér","ingenjör",1,4,0,7
+"f gȧrdsäg","fd. gårdsägare",0,1,0,10
+"f hem.ἂg","fd. hemmansägare",0,1,0,10
+"f hemἂg","fd. hemmansägare",0,1,0,10
+"f mȧl.mäst","fd. målaremästare",0,2,0,10
+"f plàtaslag","fd. plåtslagare",0,2,0,10
+"f plấtslag","fd. plåtslagare",0,2,0,10
+"f smȧsk. lär","fd. småskolelärare",0,3,0,10
+"f smȧsk.lär","fd. småskolelärare",0,3,0,10
+"f smấsk.lär","fd. småskolelärare",0,3,0,10
+"f spȧrv. kondukt","fd. spårvagnskonduktör",0,3,0,10
+"f Õverlär","fd. överlärare",0,3,0,10
+"f örestȧndarinna","fd. föreståndarinna",1,4,0,7
+"f Ỗvertryck","fd. övertryckare",0,2,5,8
+"f. förestȧndarinna","fd. föreståndarinna",2,4,0,7
+"f. heuu. ãg","fd. hemmansägare",3,1,0,10
+"f. hus…","fd. husägare",1,4,0,10
+"f. lãr","fd. lärare",1,3,0,10
+"f. spȧrvagnskondukiör","fd. spårvagnskonduktör",1,3,0,10
+"f. sågv…","fd. sågverksarbetare",1,2,0,10
+"f. trãdg.arb","fd. trädgårdsarbetare",1,1,0,10
+"f.bokhȧllare","fd. bokhållare",1,3,0,10
+"f.d. verkmâstare","fd. verkmästare",1,2,0,10
+"f.d.__","fd.",1,4,0,10
+"f.d.shrãdel","fd. skräddare",1,3,0,10
+"f.förestȧndarinna","fd. föreståndarinna",0,4,0,7
+"f.h.ãg","fd. husägare",3,4,0,10
+"f.hãg","fd. hemmansägare",2,1,0,10
+"f.lár:a,h","fd. lärarinna",1,3,0,10
+"f.smȧsholl","fd. småskolelärare",1,3,0,10
+"f.smȧskollärarinna","fd. småskolelärarinna",1,3,0,10
+"f.spȧrvägsman","fd. spårvägsman",1,3,0,10
+"f.ȧkare","fd. åkare",1,3,0,10
+"fabr.fŏrm","fabriksförman",0,2,10,8
+"fabrikõv","fabrikör",1,2,0,1
+"fastighetsãg","fastighetsägare",1,3,0,1
+"filkör?","filkörare",1,3,2,8
+"flagg_officer","flaggofficer",1,3,6,7
+"fmashȧllerska","hushållerska",1,3,7,8
+"fmbrikõr","fabrikör",1,2,0,1
+"fogearbetare?","fogdearbetare",1,3,6,8
+"folkehallãlare","folkskolelärare",1,3,5,7
+"fãrsãlj","försäljare",2,3,1,7
+"fõestadera","föreståndare",1,4,0,7
+"fõnmekan","mekaniker",1,2,10,8
+"fõrrådsarb","förrådsarbetare",0,3,1,8
+"fõssaljare","försäljare",1,3,1,7
+"fõssådsraht","förrådsarbetare",1,3,1,8
+"föresiȧndarinna","föreståndarinna",1,4,0,7
+"förestȧndare","föreståndare",6,4,0,7
+"förestȧndarinna","förestȧndarinna",4,4,0,8
+"förràdsarb","förrådsarbetare",0,3,1,8
+"förràdsm","förrådsman",0,3,1,8
+"förrădsarb","förrådsarbetare",0,3,1,8
+"förrădsarbh","förrådsarbetare",0,3,1,8
+"förrădsm","förrådsförman",0,3,1,8
+"förrădsm","förrådsförvaltare",0,3,1,7
+"förrăsarb","förrådsarbetare",0,3,1,8
+"förrȧdsarb","förrådsarbetare",0,3,1,8
+"förrȧdsarbetare","förrådsarbetare",1,3,1,8
+"förrȧdsbit","förrådsbiträde",1,3,1,8
+"förrȧdsförv","förrådsförvaltare",0,3,1,7
+"förrȧdsförvalt","förrådsförvaltare",0,3,1,7
+"förrȧdsm","förrådsman",0,3,1,8
+"förrȧdsmäst","förrådsmästare",0,3,1,6
+"förrȧdäm","förrådsmästare",0,3,1,6
+"förrấdsförm","förrådsförman",0,3,1,8
+"försãljare","försäljare",1,3,1,7
+"för…syster","syster",1,4,0,13
+"galfvan…","galvaniserare",1,2,8,8
+"garn***","garnbärare",1,2,7,8
+"glasmãnteriarb","glasmästeriarbetare",1,2,3,8
+"gohauffõr","chaufför",1,3,7,8
+"grundlȧgg","grundläggare",1,2,9,8
+"gymnastik…","gymnastikdirektör",1,3,5,7
+"gárdskarl","gårdskarl",0,3,7,8
+"gȧisag","gårdsägare",3,1,0,1
+"gȧrdakarl","gårdskarl",1,3,7,8
+"gȧrdskarl","gårdskarl",0,3,7,8
+"gȧrdsäg","gårdsägare",0,1,0,1
+"gȧrdsäg fd","fd. gårdsägare",0,1,0,10
+"gȧrdukarl","gårdskarl",1,3,7,8
+"h. ãg","husägare",6,3,0,1
+"hand.bokhȧll","handelsbokhållare",0,3,1,7
+"handelsbiteâde","handelsbiträde",1,3,1,8
+"handelsförestėndare","handelsföreståndare",1,3,1,7
+"handfãesk","handelsförståndare",2,3,1,6
+"handlitnãre","handlare",2,3,1,6
+"hapsâttare","hopsättare",1,2,2,8
+"hauãg","hemmansägare",9,1,1,3
+"hem,ἂg","hemägare",0,1,0,10
+"hem.âg","",0,1,1,3
+"hem.ἂg","hemägare",0,1,0,10
+"hem;ögare","hemägare",1,1,0,10
+"hembitrâde","hembiträde",3,3,7,8
+"hemm. ãg","hemmansägare",1,1,1,3
+"hemmansâgart","hemmansägare",1,1,1,3
+"hemmerd.?","hemmansägardotter",1,4,0,13
+"hemnãg","hemägare",1,1,0,10
+"hemãg","hemmansägare",5,1,1,3
+"hemãg:n.rõmm","hemägare",1,1,0,10
+"heuu. ãg","hemmansägare",7,1,1,3
+"heuãg","hemmansägare",7,1,1,3
+"hjãlgrarb","hjälparbetare",1,4,0,8
+"hom. Ãg","hemmansägare",8,1,1,3
+"houuãg","husägare",2,3,0,1
+"hovr. rád","hovrättsråd",0,3,6,7
+"hudsãgare","husägare",1,3,0,1
+"hundekan?","änka",1,4,0,13
+"husfõroståud","husföreståndare",1,3,7,7
+"husförestėndarinna","husföreståndarinna",3,3,7,7
+"husförestȧndarinna","hushållsföreståndarinna",8,3,7,8
+"hushåll;a","hushållerska",2,3,7,8
+"hushăll.bitr","hushållsbiträde",0,3,7,8
+"hushėllerska","hushållerska",5,3,7,8
+"hushȧllerska","hushållerska",3,3,7,8
+"hushấll","hushållare",0,3,7,8
+"husãg","husägare",3,3,0,1
+"hàrfris","hårfrisör",0,3,4,6
+"hârfris","hårfrisör",0,3,4,6
+"hãg","husägare",4,3,0,1
+"hãg. olsson","hemmansägare",1,1,1,3
+"hãttb","hattarbetare",3,3,7,8
+"hėrfrisöeska","hårfrisörska",1,3,4,6
+"hȧnadskarl","månadskarl",0,4,0,8
+"hȧrfris","hårfrisör",0,3,4,6
+"hȧrfris.","hårfrisör",0,3,4,6
+"hȧrfrisörska","hårfrisörska",1,3,4,6
+"hȧrifrisörska","hårfrisörska",1,3,4,6
+"i;e kont","1e kontorist",0,4,0,7
+"i;e post","1e postiljon",0,3,2,7
+"inepiὅr","ingenjör",0,4,0,7
+"insp;ör","inspektör",0,4,0,7
+"installalõr","installatör",1,3,4,8
+"iuspektõr","inspektör",1,4,0,7
+"j**arbetare","järnvägsarbetare",1,3,2,8
+"j_arbetare","järnvägsarbetare",1,3,2,8
+"jbr;arb","järnbruksarbetare",1,2,2,8
+"jem.Ȧg","hemägare",1,1,0,10
+"jgõman","sjöman",1,3,2,8
+"jjãnstem","tjänsteman",0,4,0,7
+"jkrãddare","skräddare",1,2,7,6
+"jrãdg. arb","trädgårdsarbetare",1,1,1,8
+"jãrnarb","järnarbetare",4,2,2,8
+"jägmästare?","jägmästare",1,1,1,7
+"järn_","järnarbetare",3,2,2,8
+"järn…are","järnsvarvare",1,2,2,8
+"jȧrnarbetae","järnarbetare",0,2,2,8
+"j…äg.","jägare",1,1,1,8
+"kans;osekreterare","kanslisekreterare",0,3,6,7
+"kapten***","kapten",1,3,2,6
+"kem.âg","",0,1,1,3
+"kessõr","kassör",1,4,0,7
+"klo… folksk.","folkskolelärare",1,3,5,7
+"kont;yrarb","kontorsarbetare",0,4,0,7
+"kontr;ant","kontrollant",0,4,0,7
+"kussõsk","kusk",1,3,2,8
+"kârnmak","kärnmakare",0,2,2,8
+"kõbsbitr","köksbiträde",1,3,5,8
+"kõjruman","köpman",1,3,0,1
+"l; stepostiljon","förste postiljon",1,3,2,8
+"l;ste postiljon","förste postiljon",1,3,2,8
+"lagerförestȧndare","lagerföreståndare",1,3,1,7
+"ldg-ág","ladugårdsägare",1,1,0,1
+"lnom. Ãg","ägare",1,4,0,1
+"lohfõr","lokförare",2,3,2,8
+"lren. Ãg","ägare",1,4,0,1
+"ládf .arb","läderfabriksarbetare",0,2,7,8
+"ládf.arb","läderfabriksarbetare",0,2,7,8
+"ládfabr.arb","läderfabriksarbetare",0,2,7,8
+"lã: a","lärarinna",2,3,5,7
+"lãg. ãg","lägenhetsägare",1,3,0,1
+"lãr a","lärarinna",1,3,5,7
+"länsarb?","länsarbetare",1,3,6,7
+"lădf. arb","läderfabriksarbetare",0,2,7,8
+"lȧdarb","lådarbetare",0,2,4,8
+"lȧg.äg","lägenhetsägare",3,3,0,1
+"mantõr","montör",1,3,2,8
+"mattpȧlägg","mattpåläggare",0,2,7,8
+"med_handlande","medicinhandlare",1,3,1,6
+"mgeniãr","ingenjör",1,4,0,7
+"mnmtõr","montör",1,3,2,8
+"mode***","modesnickare",1,2,4,8
+"molorskõl","motorskötare",1,3,2,8
+"mont>lärl","montörlärling",0,4,0,8
+"montõr","montör",1,3,2,8
+"musikdirektõr","musikdirektör",1,3,4,7
+"màl","målare",0,2,9,8
+"mál.arb","måleriarbetare",0,2,9,8
+"mâl","målare",0,2,9,8
+"mâleriarb","måleriarbetare",1,2,9,8
+"mãlare","målare",1,2,9,8
+"mållmãst","målerimästare",2,2,9,6
+"mõbelpuiekare","möbelarbetare",2,2,4,8
+"mõbesnickare","möbelsnickare",1,2,4,8
+"măl","målare",0,2,9,8
+"mėlarmästare","målaremästare",1,2,9,6
+"mėnadskarl","månadskarl",1,4,0,8
+"mȧl","målare",0,2,9,8
+"mȧl.","målare",0,2,9,8
+"mȧl. mäst","målaremästare",0,2,9,6
+"mȧl.arb","måleriarbetare",1,2,9,8
+"mȧl.mäst","målaremästare",0,2,9,6
+"mȧlare","målare",11,2,9,8
+"mȧlarinna","målarinna",1,2,9,8
+"mȧlarmästare","målarmästare",3,2,9,6
+"mȧlerbetare","måleriarbetare",1,2,9,8
+"mȧleriarbetare","måleriarbetare",2,2,9,8
+"mȧnadskarl","månadskarl",0,4,0,8
+"nap. fõrman","förman",1,2,10,8
+"nȧtl","nåtlerska",0,2,7,8
+"nȧtlerska","nåtlerska",0,2,7,8
+"nȧttlerska","nåtlerska",0,2,7,8
+"okrãdd.arb","skrädderiarbetare",1,2,7,8
+"pannplàtslag","pannplåtslagare",0,2,2,8
+"past…","pastor",1,3,6,7
+"pdȧtslagare","plåtslagare",1,2,2,8
+"plàtalag","plåtslagare",0,2,2,8
+"plàtsiag","plåtslagare",0,2,2,8
+"plàtsl.arb","plåtslageriarbetare",0,2,2,8
+"plàtslag","plåtslagare",0,2,2,8
+"plàtslag.förm","plåtslageriförman",0,2,2,8
+"plátslag","plåtslagare",0,2,2,8
+"plăbslag.arb","plåtslageriarbetare",0,2,2,8
+"plătsl.arb","plåtslageriarbetare",0,2,2,8
+"plėtslagare","plåtslagare",1,2,2,8
+"plȧtsl fd","fd. plåtslagare",0,2,0,10
+"plȧtslag","plåtslagare",0,2,2,8
+"plȧtslag.arb","plåtslageriarbetare",0,2,2,8
+"plȧtslagarmästare","plåtslagaremästare",1,2,2,6
+"plấtslag","plåtslageriarbetare",0,2,2,8
+"poliskstp;","poliskonstapel",0,3,6,8
+"pred. biãt","predikant",1,3,6,7
+"prȧmskepp","pråmskeppare",0,3,2,6
+"rapr;ant","praktikant",0,4,0,8
+"reparatâr","reparatör",1,3,8,8
+"reparatãr","reparatör",1,3,8,8
+"repr;anrt","representant",0,4,0,7
+"repr;ant","representant",0,4,0,7
+"rhrãddere","skräddare",1,2,7,6
+"rikstelef;st","rikstelefonist",0,3,2,8
+"rãllare","rallare",1,2,9,8
+"rõnmontõr","rörmontör",1,2,9,8
+"rȧdh.vaktm","rådhusvaktmästare",0,3,4,8
+"s jukvàrd","sjukvårdare",0,3,4,8
+"saitnol. h ãg","husägare",1,3,0,1
+"server.bitr.]","serveringsbiträde",1,3,4,8
+"serverbiträde?","serveringsbiträde",1,3,4,8
+"sjukshãja","sjuksköterska",1,3,4,8
+"sjuksköt;a","sjuksköterska",3,3,4,8
+"sjukvărdare","sjukvårdare",1,3,4,8
+"sjukvȧrd","sjukvårdare",0,3,4,8
+"sjukvȧrdsbiträde","sjukvårdsbiträde",2,3,4,8
+"sjukvȧrdselev","sjukvårdselev",1,3,4,8
+"sjãman","sjöman",1,3,2,8
+"sjõeea","sjöman",1,3,2,8
+"skof_arbet","skofabriksarbetare",1,2,7,8
+"skorstens…","skorstensfejare",1,3,4,8
+"skrãdd. arb","skrädderiarbetare",1,2,7,8
+"skrãldare","skräddare",1,2,7,6
+"skãdd","skräddare",1,2,7,6
+"skȧderspelare","skådespelare",1,3,4,7
+"skȧdespelare","skådespelare",1,3,4,7
+"skȧdespelerska","skådespelerska",4,3,4,7
+"skᾂdesp","skådespelare",0,3,4,7
+"slõjdlãr","slöjdlärare",1,3,5,7
+"slὅjdiᾂr","slöjdlärare",0,3,5,7
+"smed…","smed",1,2,9,6
+"smàbr.äg","småbruksägare",0,1,1,4
+"smábr. Äg","småbruksägare",0,1,1,4
+"smábr.äg","",0,1,1,3
+"smásk lär","småskolelärare",0,3,5,7
+"smâbr.äg","småbruksägare",0,1,1,4
+"smãglare","smältare",1,2,2,8
+"smãludrãg","dräng",1,1,1,8
+"smăsk.lär","småskolelärare",0,3,5,7
+"smȧbr.äg","småbruksägare",0,1,1,4
+"smȧsk. iär","småskolelärare",0,3,5,7
+"smȧsk.iär","småskolelärare",0,3,5,7
+"smȧsk.lär","småskolelärare",0,3,5,7
+"smȧskollärarinna","småskolelärarinna",1,3,5,7
+"sped;ör","speditör",0,3,2,6
+"spikkly….","spikklyvare",2,2,2,8
+"spãrv.m","spårvägsman",0,3,2,8
+"spärv;m","spårvägsman",0,3,2,8
+"spårv.arb]","spårvagnsarbetare",1,3,2,8
+"spărv. man","spårvägsman",0,3,2,8
+"spȧrvgsm","spårvagnsman",0,3,2,8
+"spȧrvägskonduktör","spårvägskonduktör",1,3,2,8
+"spȧrvägsman","spårvägsman",12,3,2,8
+"spấrv. kondukt","spårvagnskonduktör",0,3,2,8
+"spấrv.kondukt","spårvagnskonduktör",0,3,2,8
+"spấrv.man","spårvägsman",0,3,2,8
+"spấrvm","spårvägsman",0,3,2,8
+"stadsbokhȧll","stadsbokhållare",0,3,6,7
+"statdiãg","statdräng",1,1,1,8
+"stationskarl; husförestånd.","stationskarl husföreståndare",1,3,2,8
+"stãd","städare",1,3,7,8
+"stãderska","städerska",1,3,7,8
+"städ;a","städerska",3,3,7,8
+"stăd","städare",0,3,7,8
+"stȧd","städare",0,3,7,8
+"suȧgv.arb","sågverksarbetare",0,2,4,8
+"sàgv.arb","sågverksarbetare",0,2,4,8
+"sâgv.arb","sågverksarbetare",1,2,4,8
+"sõmm","sömmerska",0,2,7,8
+"sõmmerk","sömmerska",1,2,7,8
+"sõnmersha","sömmerska",1,2,7,8
+"sömm;a","sömmerska",4,2,7,8
+"sȧgare","sågare",0,2,4,8
+"sȧgskärare","sågskärare",1,2,4,8
+"sȧgv.arb","sågverksarbetare",0,2,4,8
+"sὅma","sömmerska",0,2,7,8
+"sὅmm","sömmerska",0,2,7,8
+"tagnmak.?","vagnmakare",1,2,4,6
+"tandlâkaubitiâde","tandläkarbiträde",1,3,4,8
+"tegel…","tegelarbetare",1,2,3,8
+"tele;st","telefonist",0,3,2,8
+"telef;st","telefonist",0,3,2,8
+"telegr.exp;ör","telegrafexpeditör",0,3,2,8
+"telegram…","telegrambud",1,3,2,8
+"telerf;st","telefonist",0,3,2,8
+"tillskár","tillskärare",0,2,7,8
+"timmerman]","timmerman",1,2,9,8
+"tjănsteman","tjänsteman",1,4,0,7
+"tnãdg. arb","trädgårdsarbetare",2,1,1,8
+"transp;ör","transportör",0,3,2,8
+"trâdg.bitr","trädgårdsbiträde",0,1,1,8
+"trâdg.mâst","trädgårdsmästare",0,1,1,6
+"trãdg.mãst","trädgårdsmästare",2,1,1,6
+"trädeȧrdsarkiteki","trädgårdsarkitekt",1,1,1,7
+"trädeȧrdsmästare","trädgårdsmästare",1,1,1,6
+"trädg…","trädgårdmästare",1,1,1,6
+"trădg.arb","trädgårdsarbetare",0,1,1,8
+"trȧddrag","tråddragare",0,2,2,8
+"trȧdg.mȧrt","trädgårdsmästare",1,1,1,6
+"tvălf.arb","tvålfabriksarbetare",0,2,8,8
+"uppasserska i __","uppasserska",1,3,4,8
+"vagnmakare?","vagnmakare",1,2,4,6
+"vedgȧrdsarbetare","vedgårdsarbetare",1,2,4,8
+"vedsȧg","vedsågare",0,2,4,8
+"verkm;äst","verkmästare",0,2,0,1
+"verkmâst","verkmästare",0,2,0,1
+"verkmãsl","verkmästare",1,2,0,1
+"verkmãst .","verkmästare",1,2,0,1
+"verkmăst","verkmästare",0,2,0,1
+"verkmᾂst","verkmästare",0,2,0,1
+"vetrinãr","veterinär",1,3,4,7
+"vilmonfõr","montör",1,3,2,8
+"vionrafãg","biografägare",1,3,0,1
+"volontãr","volontär",1,3,6,8
+"vãgarb","vägarbetare",2,2,9,8
+"vãveska","väverska",2,2,7,8
+"vȧvare","vävare",0,2,7,8
+"Ã.andersson","ägare",1,4,0,1
+"Ãnkefru","änkefru",1,4,0,13
+"Ångb…","ångbåtsarbetare",1,3,2,8
+"Õvering","överingenjör",0,2,10,7
+"Õverkstpl","överkonstapel",0,3,6,7
+"Õvermaskinest","övermaskinist",0,3,2,7
+"Õvermaskinist","övermaskinist",0,3,2,7
+"Õvermasklnist","övermaskinist",0,3,2,7
+"Õverste","överste",0,3,6,7
+"Õverstelöjtn","överstelöjtnant",0,3,6,7
+"ãg. wesloman","ägare",1,4,0,1
+"ãmkefuu","änkefru",1,4,0,13
+"ãuha","änka",1,4,0,13
+"ãukefrel","änkefru",1,4,0,13
+"õverlãrare","överlärare",1,3,4,7
+"ănkefru","änkefru",2,4,0,13
+"Ŏverbanmäst fd","fd. överbanmästare",0,3,0,10
+"Ŏverfurir","överfurir",0,3,6,7
+"Ŏverfurlr","överfurir",0,3,6,7
+"Ŏvering","överingenjör",0,2,10,7
+"Ŏverläk","överläkare",0,3,4,7
+"Ŏvermaskinist","övermaskinist",0,3,2,7
+"Ŏvermasknlst","övermaskinist",0,3,2,7
+"Ŏverpostiljon","överpostiljon",0,3,2,7
+"Ŏversköt","överskötare",0,3,4,7
+"Ŏverste","överste",0,3,6,7
+"Ŏverstelöjtm","överstelöjtnant",0,3,6,7
+"Ŏverstäd","överstädare",0,2,4,8
+"Ŏvertryck","övertryckare",0,2,5,7
+"Ŏvertryck f","fd. övertryckare",0,2,5,8
+"Ȧdv","advokat",0,3,5,7
+"Ȧk.äg.","åkeriägare",0,3,2,6
+"Ȧkare","åkare",0,3,2,6
+"ȧkare","åkare",3,3,2,6
+"ȧkeriarbetare","åkeriarbetare",3,3,2,8
+"Ỗverläk","överläkare",0,3,4,7
+"Ỗversklöt","överskötare",0,3,4,7
+"Ỗversköt","överskötare",0,3,4,7
+"Ỗvertryck","övertryckare",0,2,5,7
+"…","n/a",12,4,0,0
+"…arb.","arbetare",3,4,0,8
+"…dtr.","hemmadotter",4,4,0,13
+"…hyttarb.","hyttarbetare",1,2,2,8
+"…oloss.","lossare",1,3,2,8
+"…ordf.","ordförande",1,4,0,7

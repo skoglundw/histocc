@@ -172,7 +172,6 @@
 #'   \item Report bugs at \url{https://github.com/williamskoglund/histocc/issues}
 #' }
 #'
-#' @docType package
 #' @name histocc-package
 #' @aliases histocc
-NULL
+"_PACKAGE"
