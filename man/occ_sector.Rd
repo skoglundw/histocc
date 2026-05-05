@@ -8,32 +8,55 @@ occ_sector(
   data,
   occ_stand,
   out_col = "standard_occupation",
+  standardize_occupations = FALSE,
+  fuzzy_matching = TRUE,
+  fuzzy_threshold = 0.85,
   sector = TRUE,
   subsector = TRUE,
-  worker_type = TRUE
+  worker_type = TRUE,
+  label = TRUE
 )
 }
 \arguments{
-\item{data}{A data frame containing a column with standardized occupational titles}
+\item{data}{A data frame containing a column with occupational titles}
 
-\item{occ_stand}{A string: the name of the column in \code{data} with standardized occupations.}
+\item{occ_stand}{A string: the name of the column in \code{data} with occupations.
+If standardize_occupations is TRUE, this should contain raw occupation names.
+If FALSE, this should contain already standardized occupations.}
 
 \item{out_col}{A string: name for the new column with standardized values.
 Default is "standard_occupation".}
+
+\item{standardize_occupations}{A logical value: whether to standardize occupations first.
+Default is FALSE.}
+
+\item{fuzzy_matching}{A logical value: whether to perform fuzzy matching during standardization.
+Only used if standardize_occupations is TRUE. Default is TRUE.}
+
+\item{fuzzy_threshold}{A numeric value between 0 and 1 for fuzzy matching threshold.
+Only used if standardize_occupations and fuzzy_matching are TRUE. Default is 0.85.}
 
 \item{sector}{A logical value: whether to code by sector. Default is TRUE.}
 
 \item{subsector}{A logical value: whether to code by subsector. Default is TRUE.}
 
 \item{worker_type}{A logical value: whether to code by worker type Default is TRUE.}
+
+\item{label}{A logical value: whether to return descriptive labels instead of
+numerical codes. Default is FALSE.}
 }
 \value{
 A data frame with new columns containing sector, subsector and worker type.
 }
 \description{
-Codes occupational titles by sector, subsector, and worker type
+Codes occupational titles by sector, subsector, and worker type.
+Optionally standardizes occupations first if needed.
 }
 \examples{
 df <- data.frame(occ_stand = c("smed", "snickare", "soldat", "slöjdare", "lärling"))
+# With already standardized occupations
 occ_sector(df, "occ_stand")
+# With raw occupations that need standardization first
+df_raw <- data.frame(occupation = c("smed", "snickare", "sold.", "sldr", "lärling"))
+occ_sector(df_raw, "occupation", standardize_occupations = TRUE, label = TRUE)
 }

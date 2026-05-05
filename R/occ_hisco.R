@@ -1,9 +1,10 @@
 #' Code occupations using HISCO
 #'
-#' Adds HISCO, description, status, HISCLASS-12, and optional income score.
-#' When hisclass = TRUE, applies advanced HISCLASS coding logic that uses both
-#' HISCO codes and occupational status to determine the final HISCLASS-12 values.
-#' Optionally standardizes occupations first if needed.
+#' Adds the HISCO code (always), and optionally HISCO description, status,
+#' HISCLASS-12, and an income score. When hisclass = TRUE, applies advanced
+#' HISCLASS coding logic that uses both HISCO codes and occupational status
+#' to determine the final HISCLASS-12 values. Optionally standardizes
+#' occupations first if needed.
 #'
 #' @param data A data frame with a column of occupational titles
 #' @param occ_stand A string giving the name of the occupation column.
@@ -36,7 +37,10 @@
 #'   \item Status 51/52 with missing HISCLASS become higher managers (1)
 #' }
 #'
-#' @return The data frame with additional HISCO-related columns (always includes hisco).
+#' @return The data frame with additional HISCO-related columns. The `hisco`
+#'   code column is always added; other columns (`hisco_description`, `status`,
+#'   `hisclass_12`, `inc_score_*`) are added only when their corresponding
+#'   argument is TRUE.
 #' @export
 #'
 #' @examples
@@ -104,7 +108,8 @@ occ_hisco <- function(data, occ_stand,
     occ_stand_col <- occ_stand
   }
 
-  # Define columns to include in join - ALWAYS include hisco
+  # Define columns to include in join
+  # Always include the HISCO code itself
   join_cols <- c("occ_stand", "hisco")
   if (description) join_cols <- c(join_cols, "hisco_description")
   if (status) join_cols <- c(join_cols, "status")
