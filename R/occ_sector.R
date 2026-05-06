@@ -20,6 +20,12 @@
 #' @param worker_type A logical value: whether to code by worker type Default is TRUE.
 #' @param label A logical value: whether to return descriptive labels instead of
 #'   numerical codes. Default is FALSE.
+#' @param keep_codes A logical value: when both `label = TRUE` and
+#'   `keep_codes = TRUE`, the numeric `sector` / `subsector` / `worker_type`
+#'   columns are retained and the descriptive labels are added in additional
+#'   columns named `sector_label`, `subsector_label`, and `worker_type_label`.
+#'   Default is FALSE (i.e. labels overwrite codes when `label = TRUE`).
+#'   Ignored when `label = FALSE`.
 #'
 #' @return A data frame with new columns containing sector, subsector and worker type.
 #' @export
@@ -35,7 +41,7 @@ occ_sector <- function(data, occ_stand, out_col = "standard_occupation",
                        standardize_occupations = FALSE,
                        fuzzy_matching = TRUE, fuzzy_threshold = 0.85,
                        sector = TRUE, subsector = TRUE, worker_type = TRUE,
-                       label = TRUE) {
+                       label = TRUE, keep_codes = FALSE) {
   # Input validation
   if (!is.data.frame(data)) {
     stop("'data' must be a data frame")
@@ -70,6 +76,11 @@ occ_sector <- function(data, occ_stand, out_col = "standard_occupation",
   }
   if (worker_type && "worker_type" %in% names(data)) {
     existing_cols <- c(existing_cols, "worker_type")
+  }
+  if (label && keep_codes) {
+    if (sector      && "sector_label"      %in% names(data)) existing_cols <- c(existing_cols, "sector_label")
+    if (subsector   && "subsector_label"   %in% names(data)) existing_cols <- c(existing_cols, "subsector_label")
+    if (worker_type && "worker_type_label" %in% names(data)) existing_cols <- c(existing_cols, "worker_type_label")
   }
   # Note: out_col validation is handled by standardize_occupation function itself
 
@@ -198,13 +209,16 @@ occ_sector <- function(data, occ_stand, out_col = "standard_occupation",
       subsector_codes <- result$subsector
     }
 
+    # If keep_codes is TRUE, write labels to "<col>_label" instead of overwriting
+    target_col <- function(orig) if (keep_codes) paste0(orig, "_label") else orig
+
     if (sector && "sector" %in% names(result)) {
-      result$sector <- sector_labels[as.character(result$sector)]
+      result[[target_col("sector")]] <- sector_labels[as.character(result$sector)]
     }
 
     if (subsector && "subsector" %in% names(result)) {
       if (!is.null(sector_codes)) {
-        result$subsector <- mapply(function(sec, sub) {
+        result[[target_col("subsector")]] <- mapply(function(sec, sub) {
           if (is.na(sec) || is.na(sub)) return(NA_character_)
           sec_char <- as.character(sec)
           sub_char <- as.character(sub)
@@ -214,7 +228,7 @@ occ_sector <- function(data, occ_stand, out_col = "standard_occupation",
           } else {
             return(NA_character_)
           }
-        }, sector_codes, result$subsector, USE.NAMES = FALSE)
+        }, sector_codes, subsector_codes, USE.NAMES = FALSE)
       } else {
         warning("Cannot convert subsector to labels without sector information")
       }
@@ -222,7 +236,7 @@ occ_sector <- function(data, occ_stand, out_col = "standard_occupation",
 
     if (worker_type && "worker_type" %in% names(result)) {
       if (!is.null(sector_codes) && !is.null(subsector_codes)) {
-        result$worker_type <- mapply(function(sec, sub, wt) {
+        result[[target_col("worker_type")]] <- mapply(function(sec, sub, wt) {
           if (is.na(sec) || is.na(sub) || is.na(wt)) return(NA_character_)
           sec_char <- as.character(sec)
           sub_char <- as.character(sub)
