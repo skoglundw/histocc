@@ -15,7 +15,9 @@ occ_hisco(
   status = TRUE,
   hisclass = FALSE,
   inc_score = FALSE,
-  inc_score_type = c("median", "mean")
+  inc_score_type = c("median", "mean"),
+  fuzzy_hisco = TRUE,
+  fuzzy_hisco_threshold = 0.9
 )
 }
 \arguments{
@@ -46,12 +48,24 @@ Only used if standardize_occupations and fuzzy_matching are TRUE. Default is 0.8
 \item{inc_score}{Logical: include income score? Default is FALSE}
 
 \item{inc_score_type}{Either "median" or "mean". Default is "median"}
+
+\item{fuzzy_hisco}{Logical: when TRUE, rows whose \code{occ_stand} value does not
+exact-match anything in \code{hisco_crosswalk} are passed through a Jaro-Winkler
+fuzzy match against the crosswalk's unique \code{occ_stand} values. Useful for
+handling Swedish compound-word variants (e.g. \code{småskollärarinna} ↔
+\code{småskolelärarinna}, \code{ingenjörsbiträde} ↔ \code{ingenjörbiträde}). Default is TRUE.}
+
+\item{fuzzy_hisco_threshold}{Numeric between 0 and 1. Minimum Jaro-Winkler
+similarity (1 - distance) required to accept a fuzzy HISCO match. Higher
+is stricter. Default is 0.9. Only used when \code{fuzzy_hisco} is TRUE.}
 }
 \value{
 The data frame with additional HISCO-related columns. The \code{hisco}
 code column is always added; other columns (\code{hisco_description}, \code{status},
 \code{hisclass_12}, \verb{inc_score_*}) are added only when their corresponding
-argument is TRUE.
+argument is TRUE. A \code{match_type} column is also added with values
+\code{"exact"}, \code{"fuzzy"}, or \code{"none"} indicating how each row was matched
+against \code{hisco_crosswalk}.
 }
 \description{
 Adds the HISCO code (always), and optionally HISCO description, status,

@@ -23,6 +23,14 @@
 #' @param hisclass Logical: include HISCLASS-12 codes with advanced status-based adjustments? Default is FALSE
 #' @param inc_score Logical: include income score? Default is FALSE
 #' @param inc_score_type Either "median" or "mean". Default is "median"
+#' @param fuzzy_hisco Logical: when TRUE, rows whose `occ_stand` value does not
+#'   exact-match anything in `hisco_crosswalk` are passed through a Jaro-Winkler
+#'   fuzzy match against the crosswalk's unique `occ_stand` values. Useful for
+#'   handling Swedish compound-word variants (e.g. `småskollärarinna` ↔
+#'   `småskolelärarinna`, `ingenjörsbiträde` ↔ `ingenjörbiträde`). Default is TRUE.
+#' @param fuzzy_hisco_threshold Numeric between 0 and 1. Minimum Jaro-Winkler
+#'   similarity (1 - distance) required to accept a fuzzy HISCO match. Higher
+#'   is stricter. Default is 0.9. Only used when `fuzzy_hisco` is TRUE.
 #'
 #' @details When hisclass = TRUE, the function applies the following status-based adjustments:
 #' \itemize{
@@ -40,7 +48,9 @@
 #' @return The data frame with additional HISCO-related columns. The `hisco`
 #'   code column is always added; other columns (`hisco_description`, `status`,
 #'   `hisclass_12`, `inc_score_*`) are added only when their corresponding
-#'   argument is TRUE.
+#'   argument is TRUE. A `match_type` column is also added with values
+#'   `"exact"`, `"fuzzy"`, or `"none"` indicating how each row was matched
+#'   against `hisco_crosswalk`.
 #' @export
 #'
 #' @examples
@@ -60,7 +70,9 @@ occ_hisco <- function(data, occ_stand,
                       status = TRUE,
                       hisclass = FALSE,
                       inc_score = FALSE,
-                      inc_score_type = c("median", "mean")) {
+                      inc_score_type = c("median", "mean"),
+                      fuzzy_hisco = TRUE,
+                      fuzzy_hisco_threshold = 0.9) {
   # Input validation
   if (!is.data.frame(data)) stop("'data' must be a data frame")
   if (!occ_stand %in% names(data)) stop(paste("Column", occ_stand, "not found in data"))
@@ -68,10 +80,22 @@ occ_hisco <- function(data, occ_stand,
 
   inc_score_type <- match.arg(inc_score_type)
 
+  # Validate fuzzy_hisco arguments
+  if (!is.logical(fuzzy_hisco) || length(fuzzy_hisco) != 1L) {
+    stop("'fuzzy_hisco' must be a single TRUE/FALSE value.")
+  }
+  if (!is.numeric(fuzzy_hisco_threshold) || length(fuzzy_hisco_threshold) != 1L ||
+      fuzzy_hisco_threshold < 0 || fuzzy_hisco_threshold > 1) {
+    stop("'fuzzy_hisco_threshold' must be a single numeric value in [0, 1].")
+  }
+
   # Check for existing columns that would be created in this call
   existing_cols <- c()
   if ("hisco" %in% names(data)) {
     existing_cols <- c(existing_cols, "hisco")
+  }
+  if ("match_type" %in% names(data)) {
+    existing_cols <- c(existing_cols, "match_type")
   }
   if (description && "hisco_description" %in% names(data)) {
     existing_cols <- c(existing_cols, "hisco_description")
@@ -131,6 +155,53 @@ occ_hisco <- function(data, occ_stand,
   result <- merge(data, crosswalk_subset,
                   by.x = occ_stand_col, by.y = "occ_stand",
                   all.x = TRUE, sort = FALSE)
+
+  # Track how each row matched against hisco_crosswalk
+  result$match_type <- ifelse(is.na(result$hisco), "none", "exact")
+
+  # Optional fuzzy fallback for rows that didn't match exactly.
+  # Catches Swedish compound-word variants where the linker letter (s/e) or
+  # spelling differs slightly between the input and the crosswalk
+  # (e.g. småskollärarinna <-> småskolelärarinna).
+  if (fuzzy_hisco) {
+    if (!requireNamespace("stringdist", quietly = TRUE)) {
+      warning("Package 'stringdist' is required for fuzzy_hisco; skipping fuzzy fallback.")
+    } else {
+      unmatched_idx <- which(
+        is.na(result$hisco) &
+          !is.na(result[[occ_stand_col]]) &
+          nzchar(as.character(result[[occ_stand_col]]))
+      )
+      if (length(unmatched_idx) > 0L) {
+        unmatched_strs <- as.character(result[[occ_stand_col]][unmatched_idx])
+        targets <- unique(crosswalk_subset$occ_stand)
+        targets <- targets[!is.na(targets) & nzchar(targets)]
+
+        if (length(targets) > 0L) {
+          # Distance matrix: rows = unmatched inputs, cols = candidate targets
+          sim <- 1 - stringdist::stringdistmatrix(
+            unmatched_strs, targets, method = "jw", p = 0.1
+          )
+          best_col <- max.col(sim, ties.method = "first")
+          best_sim <- sim[cbind(seq_along(unmatched_strs), best_col)]
+          accept   <- !is.na(best_sim) & best_sim >= fuzzy_hisco_threshold
+
+          if (any(accept)) {
+            matched_targets <- targets[best_col[accept]]
+            target_rows     <- unmatched_idx[accept]
+            lookup_idx      <- match(matched_targets, crosswalk_subset$occ_stand)
+
+            # Fill every join column except the join key itself
+            fill_cols <- setdiff(join_cols, "occ_stand")
+            for (col in fill_cols) {
+              result[[col]][target_rows] <- crosswalk_subset[[col]][lookup_idx]
+            }
+            result$match_type[target_rows] <- "fuzzy"
+          }
+        }
+      }
+    }
+  }
 
   # Apply HISCLASS coding if requested
   if (hisclass) {
