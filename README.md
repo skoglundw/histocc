@@ -10,9 +10,10 @@ The `histocc` R package provides tools for standardizing and classifying histori
 ## Features
 
 - **Standardization**: Clean and standardize messy historical occupation titles using fuzzy matching
-- **HISCO Classification**: Code occupations using the Historical International Standard Classification of Occupations
+- **HISCO Classification**: Code occupations using the Historical International Standard Classification of Occupations, with a configurable fuzzy fallback for compound-word and spelling variants (e.g. *småskollärarinna* ↔ *småskolelärarinna*, *ingenjörsbiträde* ↔ *ingenjörbiträde*)
 - **HISCLASS**: Apply social class schemes with sophisticated status-based adjustments
 - **Sector Classification**: Categorize occupations by economic sector, subsector, and worker type
+- **Match auditing**: Every row coded by `occ_hisco()` is tagged with a `match_type` column (`"exact"`, `"fuzzy"`, or `"none"`) so you can audit and tune the matching threshold to your data
 
 ## Installation
 
@@ -57,6 +58,20 @@ Codes occupations using HISCO and optionally adds:
 - Occupational status codes  
 - HISCLASS-12 social class codes
 - Income scores (from 1900, based on Bengtsson et al. (2021))
+
+By default, rows that don't match the HISCO crosswalk exactly are passed through a Jaro-Winkler fuzzy match (controlled by `fuzzy_hisco = TRUE` and `fuzzy_hisco_threshold = 0.9`). The added `match_type` column lets you audit which rows were resolved exactly, fuzzily, or not at all:
+
+```r
+df <- data.frame(occ_stand = c("ingenjör", "ingenjörsbiträde", "vägarbetare"))
+occ_hisco(df, "occ_stand")
+# match_type:  "exact"   "fuzzy"   ...
+
+# Stricter threshold:
+occ_hisco(df, "occ_stand", fuzzy_hisco_threshold = 0.95)
+
+# Disable fuzzy matching entirely:
+occ_hisco(df, "occ_stand", fuzzy_hisco = FALSE)
+```
 
 ### `occ_sector()`
 Classifies occupations (following Bengtsson et al. (2021)) by:
